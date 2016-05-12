@@ -31,13 +31,10 @@ uint32_t adres_lsb ;
 uint32_t adres_msb ;
 
 void zend(void);
-
 void ontvang(void);
-
 
 void setup()
 {
-
   Serial.begin(9600);  // instellen seriele communicatie
   xbee.begin(Serial);  //
 }
@@ -45,13 +42,8 @@ void setup()
 void loop()
 {
   ontvang();
-
   zend();
-
-
-
 }
-
 
 void zend (void)
 {
@@ -59,17 +51,12 @@ void zend (void)
   xbee.send(zbTx);
   // delay van 2 seconden
   delay(2000);
-
-
 }
-
 
 void ontvang(void)
 {
-  
-
-  if (xbee.readPacket(TIMEOUT)) {
-
+  if (xbee.readPacket(TIMEOUT))
+  {
     // leest alle ontvangen data
     if (xbee.getResponse().isAvailable())
     {
@@ -88,10 +75,8 @@ void ontvang(void)
         for (int i = 0; i < rx.getDataLength(); i++)
         {
           Serial.print((char) rx.getData(i)) ;
-
         }
         Serial.println() ;
-
       }
     }
   }
