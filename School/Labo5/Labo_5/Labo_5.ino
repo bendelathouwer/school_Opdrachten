@@ -15,7 +15,7 @@ XBee xbee = XBee();
 uint8_t payload[] = "testBen";
 
 // instellen van het zendt adress SH + SL
-XBeeAddress64 addr64 = XBeeAddress64(0x0013A200, 408BEE26);// opgegeven adderes maakt dit unicast
+XBeeAddress64 addr64 = XBeeAddress64(0x0013A200, 0x406F4A28);// opgegeven adderes maakt dit unicast
 // maken van een TX verzoek
 ZBTxRequest zbTx = ZBTxRequest(addr64, payload, sizeof(payload));
 // maken van de klasse response
